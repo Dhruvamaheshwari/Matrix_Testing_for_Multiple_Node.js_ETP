@@ -12,27 +12,27 @@ on:
 jobs:
   dhruva:
 
-  name: aabhi ye node ke iss version pe run kr rha h ${{matrix.node-version}}
-  runs-on: ubuntu-latest
+    name: aabhi ye node ke iss version pe run kr rha h ${{matrix.node-version}}
+    runs-on: ubuntu-latest
 
-  strategy:
-    fail-fast: false
+    strategy:
+      fail-fast: false
 
-    matrix:
-      node-version: [16 , 18 , 20]
+      matrix:
+        node-version: [16 , 18 , 20]
 
-  steps:
-    - name: check the pipeline
-      uses: actions/checkout@v4
+    steps:
+      - name: check the pipeline
+        uses: actions/checkout@v4
 
-    - name: set the node version
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{matrix.node-version}}
+      - name: set the node version
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
 
-    - name: show the version
-      run: |
-        node --version
-        npm --version
-    - name: run app
-      run: npm test
+      - name: show the version
+        run: |
+          node --version
+          npm --version
+      - name: run app
+        run: npm test
