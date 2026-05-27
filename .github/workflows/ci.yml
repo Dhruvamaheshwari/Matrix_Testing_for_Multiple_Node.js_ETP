@@ -13,7 +13,7 @@ jobs:
   dhruva:
 
   name: aabhi ye node ke iss version pe run kr rha h ${{matrix.node-version}}
-  run-on: ubuntu-latest
+  runs-on: ubuntu-latest
 
   strategy:
     fail-fast: false
